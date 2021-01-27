@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,24 @@ class EmployeesScreen extends StatelessWidget {
           title: Text('داخل خط السير'),
           subtitle: Text('العملاء الذين بداخل خط السير'),
           leading: Icon(Icons.location_on_outlined),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              RouteEmployeesScreen.ROUTE_NAME,
+              arguments: true,
+            );
+          },
         ),
         Divider(),
         ListTile(
           title: Text('خارج خط السير'),
           subtitle: Text('العملاء الذين خارج خط السير'),
           leading: Icon(Icons.map_outlined),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              RouteEmployeesScreen.ROUTE_NAME,
+              arguments: false,
+            );
+          },
         ),
         Divider(),
         ListTile(

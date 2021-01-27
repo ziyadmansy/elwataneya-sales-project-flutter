@@ -1,5 +1,7 @@
+import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
 import 'package:elwataneya_sales_app/screens/main_layouts/main_layout_screen.dart';
+import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -29,6 +31,8 @@ class WataneyaApp extends StatelessWidget {
       home: MainLayoutScreen(),
       routes: {
         NewEmployeeScreen.ROUTE_NAME: (context) => NewEmployeeScreen(),
+        RouteEmployeesScreen.ROUTE_NAME: (context) => RouteEmployeesScreen(),
+        OffersScreen.ROUTE_NAME: (context) => OffersScreen(),
       },
     );
   }

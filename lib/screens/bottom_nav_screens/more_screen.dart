@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
 import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -8,7 +9,9 @@ class MoreScreen extends StatelessWidget {
         ListTile(
           title: Text('عروض و مسابقات'),
           leading: Icon(Icons.card_giftcard_outlined),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(OffersScreen.ROUTE_NAME);
+          },
         ),
         Divider(),
         ListTile(
