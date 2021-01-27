@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/finances_screens/bills_Screen.dart';
 import 'package:flutter/material.dart';
 
 class FinancesScreen extends StatelessWidget {
@@ -9,7 +10,9 @@ class FinancesScreen extends StatelessWidget {
           title: Text('الفواتير'),
           subtitle: Text('تفاصيل فواتير العملاء'),
           leading: Icon(Icons.receipt_outlined),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(BillsScreen.ROUTE_NAME);
+          },
         ),
         Divider(),
         ListTile(

@@ -1,4 +1,5 @@
 import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
+import 'package:elwataneya_sales_app/screens/more_screens/tasks_screen.dart';
 import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -17,7 +18,9 @@ class MoreScreen extends StatelessWidget {
         ListTile(
           title: Text('المهمات'),
           leading: Icon(Icons.assignment_outlined),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(TasksScreen.ROUTE_NAME);
+          },
         ),
         Divider(),
         ListTile(

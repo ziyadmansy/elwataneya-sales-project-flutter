@@ -65,7 +65,10 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
-                        Text('000153'),
+                        Text(
+                          '000153',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         Text(
                           'حسين',
                           style: ktitleTextStyle,
@@ -77,29 +80,47 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            IconButton(
-                              icon: Icon(
-                                Icons.location_on,
-                                color: mainColor,
-                                size: 32.0,
-                              ),
-                              onPressed: () {},
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.location_on,
+                                    color: mainColor,
+                                    size: 32.0,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                Text('العنوان'),
+                              ],
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.call,
-                                color: Colors.green,
-                                size: 32.0,
-                              ),
-                              onPressed: () {},
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.call,
+                                    color: Colors.green,
+                                    size: 32.0,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                Text('إتصال'),
+                              ],
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.attach_money,
-                                color: Colors.indigo,
-                                size: 32.0,
-                              ),
-                              onPressed: () {},
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.attach_money,
+                                    color: Colors.indigo,
+                                    size: 32.0,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                Text('فواتير'),
+                              ],
                             ),
                           ],
                         ),
