@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
 import 'package:elwataneya_sales_app/screens/main_layouts/main_layout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -25,8 +26,10 @@ class WataneyaApp extends StatelessWidget {
         // ... other locales the app supports
       ],
       locale: const Locale('ar', ''),
-      theme: ThemeData.light(),
       home: MainLayoutScreen(),
+      routes: {
+        NewEmployeeScreen.ROUTE_NAME: (context) => NewEmployeeScreen(),
+      },
     );
   }
 }
