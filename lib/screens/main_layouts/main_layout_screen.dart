@@ -56,6 +56,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
         selectedItemColor: mainColor,
         unselectedItemColor: Colors.grey,
         showSelectedLabels: true,
+        elevation: 12,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         items: [

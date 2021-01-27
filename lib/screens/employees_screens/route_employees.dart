@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/enums/employees_route.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class RouteEmployeesScreen extends StatefulWidget {
 
 class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
   bool _isLoading = false;
-  bool arg;
+  EmplolyeesRoute routeType;
   @override
   void initState() {
     setState(() {
@@ -18,7 +19,7 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
     Future.delayed(
       Duration.zero,
       () {
-        arg = ModalRoute.of(context).settings.arguments;
+        routeType = ModalRoute.of(context).settings.arguments;
         setState(() {
           _isLoading = false;
         });
@@ -34,7 +35,9 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
           ? null
           : AppBar(
               title: Text(
-                arg ? 'داخل خط السير' : 'خارج خط السير',
+                routeType == EmplolyeesRoute.Inside
+                    ? 'داخل خط السير'
+                    : 'خارج خط السير',
                 style: TextStyle(color: Colors.black),
               ),
               backgroundColor: Colors.white,
@@ -45,7 +48,7 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                   onPressed: () async {
                     final searchResult = await showSearch(
                       context: context,
-                      delegate: EmployeesSearch(arg),
+                      delegate: EmployeesSearch(routeType),
                     );
                     print(searchResult);
                   },
@@ -135,7 +138,7 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
 }
 
 class EmployeesSearch extends SearchDelegate<String> {
-  final bool arg;
+  final EmplolyeesRoute arg;
 
   EmployeesSearch(this.arg);
   @override

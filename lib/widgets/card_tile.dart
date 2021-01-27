@@ -17,7 +17,10 @@ class CardTile extends StatelessWidget {
           title: Text(
             title,
           ),
-          leading: Icon(leadingIcon),
+          leading: Icon(
+            leadingIcon,
+            color: mainColor,
+          ),
           trailing: CircleAvatar(
             backgroundColor: mainColor,
             radius: 24,

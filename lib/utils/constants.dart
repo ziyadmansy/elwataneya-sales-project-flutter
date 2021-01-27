@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-final Color mainColor = Colors.lightBlueAccent[700];
+final Color mainColor = Colors.lightBlue[900];
 final Color redColor = Colors.redAccent[700];
 
 const kappBarIconTheme = IconThemeData(color: Colors.grey);

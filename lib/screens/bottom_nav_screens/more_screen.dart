@@ -1,5 +1,6 @@
 import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
 import 'package:elwataneya_sales_app/screens/more_screens/tasks_screen.dart';
+import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -9,7 +10,11 @@ class MoreScreen extends StatelessWidget {
       children: [
         ListTile(
           title: Text('عروض و مسابقات'),
-          leading: Icon(Icons.card_giftcard_outlined),
+          subtitle: Text('العروض و المسابقات اليومية'),
+          leading: Icon(
+            Icons.card_giftcard_outlined,
+            color: mainColor,
+          ),
           onTap: () {
             Navigator.of(context).pushNamed(OffersScreen.ROUTE_NAME);
           },
@@ -17,21 +22,33 @@ class MoreScreen extends StatelessWidget {
         Divider(),
         ListTile(
           title: Text('المهمات'),
-          leading: Icon(Icons.assignment_outlined),
+          subtitle: Text('المهمات المطلوب تنفيذها'),
+          leading: Icon(
+            Icons.assignment_outlined,
+            color: mainColor,
+          ),
           onTap: () {
             Navigator.of(context).pushNamed(TasksScreen.ROUTE_NAME);
           },
         ),
         Divider(),
         ListTile(
-          title: Text('عن البرنامج'),
-          leading: Icon(Icons.info_outline),
+          title: Text('عن التطبيق'),
+          subtitle: Text('معلومات عن منشأ التطبيق'),
+          leading: Icon(
+            Icons.info_outline,
+            color: mainColor,
+          ),
           onTap: () {},
         ),
         Divider(),
         ListTile(
           title: Text('تسجيل الخروج'),
-          leading: Icon(Icons.exit_to_app_outlined),
+          subtitle: Text('للخروج من الحساب'),
+          leading: Icon(
+            Icons.exit_to_app_outlined,
+            color: mainColor,
+          ),
           onTap: () {},
         ),
       ],

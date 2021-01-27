@@ -1,0 +1,4 @@
+enum EmplolyeesRoute {
+  Inside,
+  Outside
+}

@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/enums/employees_route.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
@@ -11,11 +12,14 @@ class EmployeesScreen extends StatelessWidget {
         ListTile(
           title: Text('داخل خط السير'),
           subtitle: Text('العملاء الذين بداخل خط السير'),
-          leading: Icon(Icons.location_on_outlined),
+          leading: Icon(
+            Icons.location_on_outlined,
+            color: mainColor,
+          ),
           onTap: () {
             Navigator.of(context).pushNamed(
               RouteEmployeesScreen.ROUTE_NAME,
-              arguments: true,
+              arguments: EmplolyeesRoute.Inside,
             );
           },
         ),
@@ -23,11 +27,14 @@ class EmployeesScreen extends StatelessWidget {
         ListTile(
           title: Text('خارج خط السير'),
           subtitle: Text('العملاء الذين خارج خط السير'),
-          leading: Icon(Icons.map_outlined),
+          leading: Icon(
+            Icons.map_outlined,
+            color: mainColor,
+          ),
           onTap: () {
             Navigator.of(context).pushNamed(
               RouteEmployeesScreen.ROUTE_NAME,
-              arguments: false,
+              arguments: EmplolyeesRoute.Outside,
             );
           },
         ),
@@ -35,7 +42,10 @@ class EmployeesScreen extends StatelessWidget {
         ListTile(
           title: Text('إضافة عميل'),
           subtitle: Text('إضافة عميل جديد'),
-          leading: Icon(Icons.supervised_user_circle_outlined),
+          leading: Icon(
+            Icons.supervised_user_circle_outlined,
+            color: mainColor,
+          ),
           onTap: () {
             Navigator.of(context).pushNamed(NewEmployeeScreen.ROUTE_NAME);
           },
