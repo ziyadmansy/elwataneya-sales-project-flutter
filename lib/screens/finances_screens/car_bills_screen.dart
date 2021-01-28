@@ -26,133 +26,161 @@ class _CarBillScreenState extends State<CarBillScreen> {
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: Column(
           children: [
-            Container(
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'مصطفى يوسف',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        '2021/01/28',
-                        style: TextStyle(
-                          color: redColor,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'إجمالى الرصيد',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        '13320 كرتونة',
-                        style: TextStyle(
-                          color: redColor,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'قيمة الرصيد',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        '37342 جنيه',
-                        style: TextStyle(
-                          color: redColor,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
             Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, i) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 8,
-                    ),
-                    child: ExpansionPanelList(
-                      expansionCallback: (i, isExpanded) {
-                        setState(() {
-                          this.isExpanded = !isExpanded;
-                        });
-                      },
-                      children: [
-                        ExpansionPanel(
-                          canTapOnHeader: true,
-                          headerBuilder: (context, isExpanded) {
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(
-                                  'شيبسى',
-                                  style: ktitleTextStyle,
+              child: NestedScrollView(
+                headerSliverBuilder: (context, value) {
+                  return [
+                    SliverToBoxAdapter(
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'بيانات السيارة',
+                                      style: ktitleTextStyle,
+                                    ),
+                                    Text(
+                                      '2021/01/28',
+                                      style: ksubtitleTextStyle,
+                                    ),
+                                  ],
                                 ),
-                                subtitle: Text('جامبو 8 جنيه'),
                               ),
-                            );
-                          },
-                          body: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    'الكمية',
+                              Row(
+                                children: [
+                                  Text(
+                                    'مصطفى يوسف',
                                     style: TextStyle(
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 16,
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      hintText: 'الكمية',
-                                      enabledBorder: ktextFieldEnabledBorder,
-                                      focusedBorder: ktextFieldFocusedBorder,
+                                  Spacer(),
+                                  Text(
+                                    'حلوان',
+                                    style: TextStyle(
+                                      color: redColor,
+                                      fontWeight: FontWeight.w900,
                                     ),
-                                    keyboardType: TextInputType.number,
-                                    textAlignVertical: TextAlignVertical.center,
-                                    textAlign: TextAlign.center,
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
+                              Divider(),
+                              Row(
+                                children: [
+                                  Text(
+                                    'إجمالى الرصيد',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    '13320 كرتونة',
+                                    style: TextStyle(
+                                      color: redColor,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Divider(),
+                              Row(
+                                children: [
+                                  Text(
+                                    'قيمة الرصيد',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    '37342 جنيه',
+                                    style: TextStyle(
+                                      color: redColor,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          isExpanded: isExpanded,
-                        )
-                      ],
-                    ),
-                  );
+                        ),
+                      ),
+                    )
+                  ];
                 },
+                body: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, i) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0,
+                        vertical: 8,
+                      ),
+                      child: ExpansionPanelList(
+                        expansionCallback: (i, isExpanded) {
+                          setState(() {
+                            this.isExpanded = !isExpanded;
+                          });
+                        },
+                        children: [
+                          ExpansionPanel(
+                            canTapOnHeader: true,
+                            headerBuilder: (context, isExpanded) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ListTile(
+                                  title: Text(
+                                    'شيبسى',
+                                    style: ktitleTextStyle,
+                                  ),
+                                  subtitle: Text('جامبو 8 جنيه'),
+                                ),
+                              );
+                            },
+                            body: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      'الكمية',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        hintText: 'الكمية',
+                                        enabledBorder: ktextFieldEnabledBorder,
+                                        focusedBorder: ktextFieldFocusedBorder,
+                                      ),
+                                      keyboardType: TextInputType.number,
+                                      textAlignVertical:
+                                          TextAlignVertical.center,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            isExpanded: isExpanded,
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             FullWidthButton(

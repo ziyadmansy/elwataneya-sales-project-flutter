@@ -1,4 +1,5 @@
 import 'package:elwataneya_sales_app/enums/employees_route.dart';
+import 'package:elwataneya_sales_app/screens/employees_screens/employee_bill_Screen.dart';
 import 'package:elwataneya_sales_app/search_delegates/employee_search.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -121,7 +122,11 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                                     color: Colors.indigo,
                                     size: 32.0,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed(
+                                      EmployeeBillScreen.ROUTE_NAME,
+                                    );
+                                  },
                                 ),
                                 Text('فواتير'),
                               ],
@@ -137,5 +142,3 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
     );
   }
 }
-
-

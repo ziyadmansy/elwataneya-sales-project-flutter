@@ -1,3 +1,5 @@
+import 'package:elwataneya_sales_app/screens/employees_screens/bill_preview_screen.dart';
+import 'package:elwataneya_sales_app/screens/employees_screens/employee_bill_Screen.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/car_order_print_view_screen.dart';
@@ -52,6 +54,8 @@ class WataneyaApp extends StatelessWidget {
         NewCarOrderScreen.ROUTE_NAME: (context) => NewCarOrderScreen(),
         CarOrderPrintViewScreen.ROUTE_NAME: (context) =>
             CarOrderPrintViewScreen(),
+        EmployeeBillScreen.ROUTE_NAME: (context) => EmployeeBillScreen(),
+        BillPreviewScreen.ROUTE_NAME: (context) => BillPreviewScreen(),
       },
     );
   }
