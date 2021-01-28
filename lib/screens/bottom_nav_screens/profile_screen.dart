@@ -57,6 +57,12 @@ class ProfileScreen extends StatelessWidget {
                 leadingIcon: Icons.tour_outlined,
                 trailingText: '71',
               ),
+              Divider(),
+              CardTile(
+                title: 'إجمالى مبيعات الشهر الحالى',
+                leadingIcon: Icons.leaderboard_outlined,
+                trailingText: '71',
+              ),
             ],
           ),
         ),

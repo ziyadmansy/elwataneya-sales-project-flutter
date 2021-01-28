@@ -19,9 +19,14 @@ class FullWidthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 48,
       child: RaisedButton.icon(
-        label: Text(btnText),
+        label: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 8),
+          child: Text(
+            btnText,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
         textColor: btnTextColor,
         icon: Icon(btnIcon),
         shape: RoundedRectangleBorder(

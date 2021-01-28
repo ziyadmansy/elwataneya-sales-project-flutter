@@ -1,4 +1,6 @@
+import 'package:elwataneya_sales_app/screens/finances_screens/account_debts_Screen.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/bills_Screen.dart';
+import 'package:elwataneya_sales_app/screens/finances_screens/car_bills_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +24,9 @@ class FinancesScreen extends StatelessWidget {
           subtitle: Text('كشف حساب الموزع بالتفصيل'),
           leading: Icon(Icons.receipt_long_outlined,
             color: mainColor,),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(AccountDebtScreen.ROUTE_NAME);
+          },
         ),
         Divider(),
         ListTile(
@@ -30,7 +34,9 @@ class FinancesScreen extends StatelessWidget {
           subtitle: Text('رصيد حمولة السيارة بالتفصيل'),
           leading: Icon(Icons.local_shipping_outlined,
             color: mainColor,),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(CarBillScreen.ROUTE_NAME);
+          },
         ),
       ],
     );

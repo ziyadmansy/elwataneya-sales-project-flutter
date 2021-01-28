@@ -1,66 +1,69 @@
-import 'package:elwataneya_sales_app/enums/employees_route.dart';
-import 'package:elwataneya_sales_app/search_delegates/employee_search.dart';
+import 'package:elwataneya_sales_app/search_delegates/account_debt_search.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class RouteEmployeesScreen extends StatefulWidget {
-  static const String ROUTE_NAME = '/RouteEmployeesScreen';
+class AccountDebtScreen extends StatefulWidget {
+  static const String ROUTE_NAME = '/accountDebtScreen';
   @override
-  _RouteEmployeesScreenState createState() => _RouteEmployeesScreenState();
+  _AccountDebtScreenState createState() => _AccountDebtScreenState();
 }
 
-class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
-  bool _isLoading = false;
-  EmplolyeesRoute routeType;
-  @override
-  void initState() {
-    setState(() {
-      _isLoading = true;
-    });
-    Future.delayed(
-      Duration.zero,
-      () {
-        routeType = ModalRoute.of(context).settings.arguments;
-        setState(() {
-          _isLoading = false;
-        });
-      },
-    );
-    super.initState();
-  }
-
+class _AccountDebtScreenState extends State<AccountDebtScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _isLoading
-          ? null
-          : AppBar(
-              title: Text(
-                routeType == EmplolyeesRoute.Inside
-                    ? 'داخل خط السير'
-                    : 'خارج خط السير',
-                style: TextStyle(color: Colors.black),
-              ),
-              backgroundColor: Colors.white,
-              iconTheme: kappBarIconTheme,
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () async {
-                    final searchResult = await showSearch(
-                      context: context,
-                      delegate: EmployeesSearch(routeType),
-                    );
-                    print(searchResult);
-                  },
+      appBar: AppBar(
+        title: Text(
+          'العملاء المدينين',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        iconTheme: kappBarIconTheme,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () async {
+              final searchResult = await showSearch(
+                context: context,
+                delegate: AccountDebtSearch(),
+              );
+              print(searchResult);
+            },
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListTile(
+                title: Text(
+                  'إجمالى المديونية',
+                  style: TextStyle(
+                    color: redColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ],
+                leading: Icon(
+                  Icons.money,
+                  color: mainColor,
+                ),
+                trailing: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: mainColor,
+                  child: FittedBox(
+                    child: Text(
+                      '62341',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ),
-      body: _isLoading
-          ? Center(
-              child: appLoader,
-            )
-          : ListView.builder(
+          ),
+          Expanded(
+            child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context, i) {
                 return Card(
@@ -70,16 +73,14 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                     child: Column(
                       children: [
                         Text(
-                          '000153',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
                           'حسين',
                           style: ktitleTextStyle,
                         ),
                         Text(
-                          'حسين البارودى',
-                          style: ksubtitleTextStyle,
+                          'المديونية 5000 جنيه',
+                          style: ktitleTextStyle.copyWith(
+                            color: redColor,
+                          ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,7 +118,7 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                               children: [
                                 IconButton(
                                   icon: Icon(
-                                    Icons.attach_money,
+                                    Icons.book_outlined,
                                     color: Colors.indigo,
                                     size: 32.0,
                                   ),
@@ -134,8 +135,9 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
                 );
               },
             ),
+          ),
+        ],
+      ),
     );
   }
 }
-
-

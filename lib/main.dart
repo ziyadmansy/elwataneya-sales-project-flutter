@@ -1,6 +1,8 @@
 import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/new_employee_screen.dart';
+import 'package:elwataneya_sales_app/screens/finances_screens/account_debts_Screen.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/bills_Screen.dart';
+import 'package:elwataneya_sales_app/screens/finances_screens/car_bills_screen.dart';
 import 'package:elwataneya_sales_app/screens/main_layouts/main_layout_screen.dart';
 import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
 import 'package:elwataneya_sales_app/screens/more_screens/tasks_screen.dart';
@@ -37,6 +39,8 @@ class WataneyaApp extends StatelessWidget {
         OffersScreen.ROUTE_NAME: (context) => OffersScreen(),
         BillsScreen.ROUTE_NAME: (context) => BillsScreen(),
         TasksScreen.ROUTE_NAME: (context) => TasksScreen(),
+        CarBillScreen.ROUTE_NAME: (context) => CarBillScreen(),
+        AccountDebtScreen.ROUTE_NAME: (context) => AccountDebtScreen(),
       },
     );
   }
