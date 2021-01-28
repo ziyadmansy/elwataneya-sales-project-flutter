@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/finances_screens/car_orders_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:elwataneya_sales_app/widgets/full_width_button.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +26,72 @@ class _CarBillScreenState extends State<CarBillScreen> {
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: Column(
           children: [
+            Container(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'مصطفى يوسف',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      Text(
+                        '2021/01/28',
+                        style: TextStyle(
+                          color: redColor,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'إجمالى الرصيد',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      Text(
+                        '13320 كرتونة',
+                        style: TextStyle(
+                          color: redColor,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'قيمة الرصيد',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      Text(
+                        '37342 جنيه',
+                        style: TextStyle(
+                          color: redColor,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
             Expanded(
               child: ListView.builder(
-                itemCount: 50,
+                itemCount: 10,
                 itemBuilder: (context, i) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -59,17 +123,21 @@ class _CarBillScreenState extends State<CarBillScreen> {
                             padding: const EdgeInsets.all(16.0),
                             child: Row(
                               children: [
-                                Text(
-                                  'الكمية',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
+                                Expanded(
+                                  child: Text(
+                                    'الكمية',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
                                 Expanded(
                                   child: TextField(
                                     decoration: InputDecoration(
                                       hintText: 'الكمية',
+                                      enabledBorder: ktextFieldEnabledBorder,
+                                      focusedBorder: ktextFieldFocusedBorder,
                                     ),
                                     keyboardType: TextInputType.number,
                                     textAlignVertical: TextAlignVertical.center,
@@ -91,8 +159,10 @@ class _CarBillScreenState extends State<CarBillScreen> {
               btnText: 'طلبات الرصيد',
               btnColor: mainColor,
               btnTextColor: Colors.white,
-              btnIcon: Icons.menu,
-              onBtnPressed: () {},
+              btnIcon: Icons.edit_outlined,
+              onBtnPressed: () {
+                Navigator.of(context).pushNamed(CarOrdersScreen.ROUTE_NAME);
+              },
             )
           ],
         ),

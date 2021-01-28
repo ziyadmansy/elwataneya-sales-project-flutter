@@ -1,4 +1,4 @@
-import 'package:elwataneya_sales_app/screens/finances_screens/account_debts_Screen.dart';
+import 'package:elwataneya_sales_app/screens/finances_screens/debts_Screen.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/bills_Screen.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/car_bills_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
@@ -25,7 +25,7 @@ class FinancesScreen extends StatelessWidget {
           leading: Icon(Icons.receipt_long_outlined,
             color: mainColor,),
           onTap: () {
-            Navigator.of(context).pushNamed(AccountDebtScreen.ROUTE_NAME);
+            Navigator.of(context).pushNamed(DebtsScreen.ROUTE_NAME);
           },
         ),
         Divider(),

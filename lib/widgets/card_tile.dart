@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class CardTile extends StatelessWidget {
   final String title;
+  final String subtitle;
   final String trailingText;
   final IconData leadingIcon;
 
-  const CardTile({this.title, this.trailingText, this.leadingIcon});
+  const CardTile(
+      {this.title, this.trailingText, this.leadingIcon, this.subtitle = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,10 @@ class CardTile extends StatelessWidget {
             leadingIcon,
             color: mainColor,
           ),
+          subtitle: this.subtitle == '' ? null : Text(subtitle),
           trailing: CircleAvatar(
             backgroundColor: mainColor,
-            radius: 24,
+            radius: 28,
             child: FittedBox(
               child: Text(
                 trailingText,

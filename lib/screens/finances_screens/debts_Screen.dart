@@ -1,14 +1,15 @@
+import 'package:elwataneya_sales_app/screens/finances_screens/debt_details_screen.dart';
 import 'package:elwataneya_sales_app/search_delegates/account_debt_search.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class AccountDebtScreen extends StatefulWidget {
-  static const String ROUTE_NAME = '/accountDebtScreen';
+class DebtsScreen extends StatefulWidget {
+  static const String ROUTE_NAME = '/debtsScreen';
   @override
-  _AccountDebtScreenState createState() => _AccountDebtScreenState();
+  _DebtsScreenState createState() => _DebtsScreenState();
 }
 
-class _AccountDebtScreenState extends State<AccountDebtScreen> {
+class _DebtsScreenState extends State<DebtsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,34 +35,6 @@ class _AccountDebtScreenState extends State<AccountDebtScreen> {
       ),
       body: Column(
         children: [
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text(
-                  'إجمالى المديونية',
-                  style: TextStyle(
-                    color: redColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.money,
-                  color: mainColor,
-                ),
-                trailing: CircleAvatar(
-                  radius: 30,
-                  backgroundColor: mainColor,
-                  child: FittedBox(
-                    child: Text(
-                      '62341',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
           Expanded(
             child: ListView.builder(
               itemCount: 5,
@@ -122,7 +95,11 @@ class _AccountDebtScreenState extends State<AccountDebtScreen> {
                                     color: Colors.indigo,
                                     size: 32.0,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed(
+                                      DebtDetailsScreen.ROUTE_NAME,
+                                    );
+                                  },
                                 ),
                                 Text('فواتير'),
                               ],
@@ -134,6 +111,28 @@ class _AccountDebtScreenState extends State<AccountDebtScreen> {
                   ),
                 );
               },
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Text(
+                  'إجمالى المديونية',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  '628341',
+                  style: TextStyle(
+                    color: redColor,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

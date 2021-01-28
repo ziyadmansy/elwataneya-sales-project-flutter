@@ -3,6 +3,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 final Color mainColor = Colors.lightBlue[900];
 final Color redColor = Colors.redAccent[700];
+final Color greenColor = Colors.greenAccent[700];
 
 const kappBarIconTheme = IconThemeData(color: Colors.grey);
 
@@ -32,4 +33,17 @@ final ktitleTextStyle = TextStyle(
 const ksubtitleTextStyle = TextStyle(
   fontSize: 16.0,
   color: Colors.grey,
+);
+
+const ktextFieldEnabledBorder = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: Colors.grey,
+  ),
+);
+
+final ktextFieldFocusedBorder = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: mainColor,
+    width: 2,
+  ),
 );

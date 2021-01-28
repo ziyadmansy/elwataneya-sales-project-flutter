@@ -1,3 +1,4 @@
+import 'package:elwataneya_sales_app/screens/finances_screens/bill_details_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:elwataneya_sales_app/widgets/triple_lines_card.dart';
 import 'package:flutter/material.dart';
@@ -57,39 +58,47 @@ class _BillsScreenState extends State<BillsScreen> {
                   return Card(
                     margin:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: [
-                          Text('000153'),
-                          Text(
-                            'مزايا ماركت',
-                            style: ktitleTextStyle,
-                          ),
-                          Row(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(BillDetailsScreen.ROUTE_NAME);
+                      },
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
                             children: [
-                              Spacer(),
-                              Column(
+                              Text('000153'),
+                              Text(
+                                'مزايا ماركت',
+                                style: ktitleTextStyle,
+                              ),
+                              Row(
                                 children: [
-                                  Text(
-                                    'إجمالى: 541.50 ج',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    'دفع كاش',
-                                    style: ksubtitleTextStyle.copyWith(
-                                      fontSize: 14,
-                                    ),
+                                  Spacer(),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'إجمالى: 541.50 ج',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
+                                      Text(
+                                        'دفع كاش',
+                                        style: ksubtitleTextStyle.copyWith(
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   );
