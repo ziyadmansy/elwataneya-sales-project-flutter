@@ -7,6 +7,8 @@ final Color greenColor = Colors.greenAccent[700];
 
 const kappBarIconTheme = IconThemeData(color: Colors.grey);
 
+const String API_URL = 'https://elwatanyagroup.com/system/api';
+
 final appLoader = SpinKitDoubleBounce(
   color: mainColor,
   size: 40.0,

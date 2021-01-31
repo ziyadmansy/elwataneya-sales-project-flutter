@@ -7,6 +7,7 @@ import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class MainLayoutScreen extends StatefulWidget {
+  static const String ROUTE_NAME = '/mainLayoutScreen';
   @override
   _MainLayoutScreenState createState() => _MainLayoutScreenState();
 }

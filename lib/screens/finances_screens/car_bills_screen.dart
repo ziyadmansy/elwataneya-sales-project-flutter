@@ -1,7 +1,9 @@
+import 'package:elwataneya_sales_app/providers/auth.dart';
 import 'package:elwataneya_sales_app/screens/finances_screens/car_orders_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:elwataneya_sales_app/widgets/full_width_button.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CarBillScreen extends StatefulWidget {
   static const String ROUTE_NAME = '/carBilllsScreen';
@@ -13,6 +15,7 @@ class _CarBillScreenState extends State<CarBillScreen> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
+    final authData = Provider.of<Auth>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -53,7 +56,7 @@ class _CarBillScreenState extends State<CarBillScreen> {
                               Row(
                                 children: [
                                   Text(
-                                    'مصطفى يوسف',
+                                    authData.name,
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,

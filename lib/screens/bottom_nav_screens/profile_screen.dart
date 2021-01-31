@@ -1,10 +1,13 @@
+import 'package:elwataneya_sales_app/providers/auth.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:elwataneya_sales_app/widgets/card_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final authData = Provider.of<Auth>(context);
     return SingleChildScrollView(
       child: Center(
         child: Padding(
@@ -21,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
                 backgroundColor: Colors.grey,
               ),
               Text(
-                'خط اكتوبر الشيخ حسن',
+                authData.name,
                 style: ktitleTextStyle,
               ),
               Text(
@@ -57,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               CardTile(
                 title: 'الزيارات',
-                 subtitle: 'جنيه 0 / 0',
+                subtitle: 'جنيه 0 / 0',
                 leadingIcon: Icons.tour_outlined,
                 trailingText: '0%',
               ),
