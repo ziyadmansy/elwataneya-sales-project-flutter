@@ -34,6 +34,7 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                   return [
                     SliverToBoxAdapter(
                       child: Card(
+                        elevation: kcardElevation,
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
@@ -68,10 +69,6 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                                 ],
                               ),
                               Divider(),
-                              Text(
-                                'النوع',
-                                style: ktitleTextStyle,
-                              ),
                               ToggleButtons(
                                 children: [
                                   Padding(
@@ -99,8 +96,7 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                                   });
                                 },
                                 constraints: BoxConstraints.expand(
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
+                                  width: MediaQuery.of(context).size.width / 4,
                                 ),
                               ),
                             ],
@@ -119,6 +115,7 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                         vertical: 8,
                       ),
                       child: ExpansionPanelList(
+                        elevation: 4,
                         expansionCallback: (i, isExpanded) {
                           setState(() {
                             testList[i] = !isExpanded;
@@ -128,59 +125,269 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                           ExpansionPanel(
                             canTapOnHeader: true,
                             headerBuilder: (context, isExpanded) {
-                              return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ListTile(
-                                  title: Text(
-                                    'شيبسى',
-                                    style: ktitleTextStyle,
-                                  ),
-                                  subtitle: Text('جامبو 8 جنيه'),
+                              return ListTile(
+                                title: Text(
+                                  'شيبسى',
+                                  style: ktitleTextStyle,
                                 ),
+                                subtitle: Text('جامبو 8 جنيه'),
                               );
                             },
                             body: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: ListView.separated(
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: 5,
-                                itemBuilder: (context, i) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            'الكمية',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 16,
-                                            ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
                                           ),
                                         ),
-                                        Expanded(
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                              hintText: 'الكمية',
-                                              enabledBorder:
-                                                  ktextFieldEnabledBorder,
-                                              focusedBorder:
-                                                  ktextFieldFocusedBorder,
-                                            ),
-                                            keyboardType: TextInputType.number,
-                                            textAlignVertical:
-                                                TextAlignVertical.center,
-                                            textAlign: TextAlign.center,
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                                separatorBuilder: (context, i) {
-                                  return Divider();
-                                },
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          'الكمية',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          style: TextStyle(fontSize: 16),
+                                          decoration: InputDecoration(
+                                            hintText: 'الكمية',
+                                          ),
+                                          keyboardType: TextInputType.number,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                             isExpanded: testList[i],

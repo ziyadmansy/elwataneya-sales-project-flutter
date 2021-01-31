@@ -42,11 +42,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final isValid = _loginFormKey.currentState.validate();
     if (isValid) {
       try {
+        _loginFormKey.currentState.save();
+
         setState(() {
           _isLoading = true;
         });
+
         FocusScope.of(context).unfocus();
-        _loginFormKey.currentState.save();
+
         final authData = Provider.of<Auth>(context, listen: false);
         await authData.loginUser(phoneNumber, password);
         setState(() {
@@ -87,8 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   kverticalSpace32,
                   TextFormField(
                     decoration: InputDecoration(
-                      hintText: 'رقم التليفون',
-                      labelText: 'رقم التليفون',
+                      hintText: 'رقم الموبايل',
+                      labelText: 'رقم الموبايل',
                       enabledBorder: ktextFieldEnabledBorder,
                       focusedBorder: ktextFieldFocusedBorder,
                     ),
@@ -96,9 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     textInputAction: TextInputAction.next,
                     validator: (text) {
                       if (text.isEmpty) {
-                        return 'برجاء إدخال رقم التليفون';
+                        return 'برجاء إدخال رقم الموبايل';
                       } else if (text.length < 11) {
-                        return 'برجاء إدخال رقم تليفون صحيح';
+                        return 'برجاء إدخال رقم صحيح';
                       } else {
                         return null;
                       }
@@ -131,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   kverticalSpace32,
                   RoundedRectangleButton(
-                    btnText: 'تسجيل دخول',
+                    btnText: _isLoading ? 'جارى تسجيل الدخول' : 'تسجيل دخول',
                     btnColor: mainColor,
                     btnTextColor: Colors.white,
                     btnPressed: _isLoading ? null : _login,

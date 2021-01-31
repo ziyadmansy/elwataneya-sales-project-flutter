@@ -26,6 +26,7 @@ class _BillPreviewScreenState extends State<BillPreviewScreen> {
           child: Column(
             children: [
               Card(
+                elevation: kcardElevation,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
@@ -130,6 +131,7 @@ class _BillPreviewScreenState extends State<BillPreviewScreen> {
                 ),
               ),
               Card(
+                elevation: kcardElevation,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(

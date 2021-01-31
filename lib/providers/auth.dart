@@ -38,4 +38,11 @@ class Auth extends ChangeNotifier {
       throw error.toString();
     }
   }
+
+  Future<void> logoutUser() async {
+    uid = null;
+    name = null;
+    status = null;
+    notifyListeners();
+  }
 }

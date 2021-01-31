@@ -1,4 +1,6 @@
 import 'package:elwataneya_sales_app/providers/auth.dart';
+import 'package:elwataneya_sales_app/providers/debts.dart';
+import 'package:elwataneya_sales_app/providers/user_profile.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/bill_preview_screen.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/employee_bill_Screen.dart';
 import 'package:elwataneya_sales_app/screens/employees_screens/route_employees.dart';
@@ -30,6 +32,15 @@ class WataneyaApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => Auth(),
+        ),
+        ChangeNotifierProxyProvider<Auth, UserProfile>(
+          update: (context, authData, prevUserProfile) =>
+              UserProfile(authData.uid),
+          create: null,
+        ),
+        ChangeNotifierProxyProvider<Auth, Debts>(
+          update: (context, authData, prevDebts) => Debts(authData.uid),
+          create: null,
         ),
       ],
       child: MaterialApp(

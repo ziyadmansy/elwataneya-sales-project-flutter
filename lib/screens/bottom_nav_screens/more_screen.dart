@@ -1,8 +1,10 @@
+import 'package:elwataneya_sales_app/providers/auth.dart';
 import 'package:elwataneya_sales_app/screens/main_layouts/login_screen.dart';
 import 'package:elwataneya_sales_app/screens/more_screens/offers_screen.dart';
 import 'package:elwataneya_sales_app/screens/more_screens/tasks_screen.dart';
 import 'package:elwataneya_sales_app/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MoreScreen extends StatelessWidget {
   @override
@@ -50,13 +52,14 @@ class MoreScreen extends StatelessWidget {
             Icons.exit_to_app_outlined,
             color: mainColor,
           ),
-          onTap: () {
+          onTap: () async {
+            Provider.of<Auth>(context, listen: false).logoutUser();
             Navigator.of(context).pushNamedAndRemoveUntil(
               LoginScreen.ROUTE_NAME,
               ModalRoute.withName('/'),
             );
           },
-        ), 
+        ),
       ],
     );
   }

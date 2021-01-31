@@ -65,6 +65,7 @@ class _RouteEmployeesScreenState extends State<RouteEmployeesScreen> {
               itemCount: 5,
               itemBuilder: (context, i) {
                 return Card(
+                  elevation: kcardElevation,
                   margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
