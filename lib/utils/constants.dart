@@ -11,7 +11,12 @@ const kappBarIconTheme = IconThemeData(color: Colors.grey);
 const String API_URL = 'https://elwatanyagroup.com/system/api';
 
 const String INTERNET_WARNING_MESSAGE =
-    'برجاء التأكد من وجود شبكة الإنترنت و إعادة المحاولة';
+    'برجاء التأكد من وجود شبكة إنترنت و إعادة المحاولة';
+
+const String LOGGED_IN_KEY = 'isLoggedIn';
+const String UID_KEY = 'uid';
+const String NAME_KEY = 'name';
+const String STATUS_KEY = 'status';
 
 final appLoader = SpinKitDoubleBounce(
   color: mainColor,

@@ -53,11 +53,12 @@ class MoreScreen extends StatelessWidget {
             color: mainColor,
           ),
           onTap: () async {
-            Provider.of<Auth>(context, listen: false).logoutUser();
-            Navigator.of(context).pushNamedAndRemoveUntil(
-              LoginScreen.ROUTE_NAME,
-              ModalRoute.withName('/'),
-            );
+            await Provider.of<Auth>(context, listen: false).logoutUser();
+            Navigator.of(context).pushReplacementNamed('/');
+            // Navigator.of(context).pushNamedAndRemoveUntil(
+            //   LoginScreen.ROUTE_NAME,
+            //   ModalRoute.withName('/'),
+            // );
           },
         ),
       ],

@@ -67,6 +67,7 @@ class _DebtsScreenState extends State<DebtsScreen> {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
+      print('couln\'t launch $url');
       Toast.show(
         "تعذر إجراء الإتصال برجاء المحاولة فى وقت لاحق",
         context,
@@ -188,7 +189,7 @@ class _DebtsScreenState extends State<DebtsScreen> {
                                             ),
                                             onPressed: () async {
                                               await _makePhoneCall(
-                                                  debtor.phone);
+                                                  'tel:${debtor.phone}');
                                             },
                                           ),
                                           Text('إتصال'),

@@ -13,6 +13,22 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
   List<bool> _billTypeValues = [true, false];
   List<bool> testList = [true, false, false, false, false, false];
 
+  DateTime selectedDate = DateTime.now();
+
+  Future<void> _selectDate() async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(DateTime.now().year - 2),
+        lastDate: DateTime(DateTime.now().year + 1));
+    if (picked != null && picked != selectedDate) {
+      // User picked a Date
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +48,25 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
               child: NestedScrollView(
                 headerSliverBuilder: (context, value) {
                   return [
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: redColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          onPressed: _selectDate,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                                '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}'),
+                          ),
+                        ),
+                      ),
+                    ),
                     SliverToBoxAdapter(
                       child: Card(
                         elevation: kcardElevation,
@@ -137,231 +172,6 @@ class _EmployeeBillScreenState extends State<EmployeeBillScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'الكمية',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: TextField(
-                                          style: TextStyle(fontSize: 16),
-                                          decoration: InputDecoration(
-                                            hintText: 'الكمية',
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          textAlignVertical:
-                                              TextAlignVertical.center,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
                                   Row(
                                     children: [
                                       Expanded(

@@ -52,10 +52,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
         final authData = Provider.of<Auth>(context, listen: false);
         await authData.loginUser(phoneNumber, password);
-        setState(() {
-          _isLoading = false;
-        });
-        Navigator.of(context).pushReplacementNamed(MainLayoutScreen.ROUTE_NAME);
+        // if (mounted) {
+        //   setState(() {
+        //     _isLoading = false;
+        //   });
+        // }
+        // Navigator.of(context).pushReplacementNamed(MainLayoutScreen.ROUTE_NAME);
       } catch (error) {
         setState(() {
           _isLoading = false;

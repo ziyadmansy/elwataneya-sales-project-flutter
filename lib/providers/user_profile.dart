@@ -7,19 +7,19 @@ class UserProfile with ChangeNotifier {
 
   UserProfile(this.uid);
 
-  String today;
-  String dScore;
+  var today;
+  var dScore;
   var dPercent;
-  String month;
-  String mScore;
+  var month;
+  var mScore;
   var mPercent;
   var vTarget;
   var vscore;
   var vpercent;
   var bills;
-  String money;
+  var money;
   var allbills;
-  String allmoney;
+  var allmoney;
 
   Future<void> getProfileData() async {
     try {
